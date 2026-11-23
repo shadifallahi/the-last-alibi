@@ -79,6 +79,8 @@ the-last-alibi/
 ### Main Menu
 ![The Last Alibi - Main Menu](main-menu.png)
 
+Crime Scene Investigation
+
 ## 🎯 Future Improvements
 
 - Add more suspects and branching dialogue.
