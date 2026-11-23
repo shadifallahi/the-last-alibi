@@ -74,6 +74,10 @@ the-last-alibi/
 ├── LICENSE       # Project license
 └── .gitignore    # Git ignore configuration
 ```
+## 📸 Screenshots
+
+### Main Menu
+![The Last Alibi - Main Menu](main-menu.png)
 
 ## 🎯 Future Improvements
 
