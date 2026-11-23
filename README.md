@@ -74,12 +74,15 @@ the-last-alibi/
 ├── LICENSE       # Project license
 └── .gitignore    # Git ignore configuration
 ```
+
+
 ## 📸 Screenshots
 
 ### Main Menu
 ![The Last Alibi - Main Menu](main-menu.png)
 
-Crime Scene Investigation
+### Crime Scene Investigation
+![The Last Alibi - Crime Scene](crime-scene.png)
 
 ## 🎯 Future Improvements
 
