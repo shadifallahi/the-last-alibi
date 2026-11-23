@@ -4,7 +4,10 @@
 # A Terminal-Based Detective Mystery Game
 # ==================================================
 
+
+# ==================================================
 # GAME DATA
+# ==================================================
 
 notebook = []
 interviewed_suspects = []
@@ -102,13 +105,9 @@ def interview_suspects():
             "description": "Edward's wife.",
 
             "questions": {
-
                 "1": "Edward and I had dinner together at 8 PM.",
-
                 "2": "He had many business enemies. I don't know who would want him dead.",
-
                 "3": "I was in the living room after dinner.",
-
                 "4": "I have never seen that photograph before."
             }
         },
@@ -118,13 +117,9 @@ def interview_suspects():
             "description": "Edward's personal assistant.",
 
             "questions": {
-
                 "1": "I last saw Edward around 8:30 PM.",
-
                 "2": "Edward was a private man. He didn't discuss his enemies with me.",
-
                 "3": "I left the mansion at 9 PM. I had somewhere important to be.",
-
                 "4": "I don't know anything about that photograph."
             }
         },
@@ -134,13 +129,9 @@ def interview_suspects():
             "description": "Edward's personal doctor.",
 
             "questions": {
-
                 "1": "I examined Edward earlier that evening.",
-
                 "2": "He seemed anxious, but he didn't tell me why.",
-
                 "3": "I left shortly before 9 PM.",
-
                 "4": "I noticed Edward was keeping some old photographs."
             }
         }
@@ -189,6 +180,45 @@ def interview_suspects():
 
                     print(f"\n{suspect['name']}:")
                     print(f"\"{suspect['questions'][question]}\"")
+
+                    # Evidence-based dialogue with James Carter
+
+                    if suspect["name"] == "James Carter" and question == "4":
+
+                        photograph = (
+                            "You find a photograph of Edward with an unknown person."
+                        )
+
+                        if photograph in notebook:
+
+                            print("\nYou show James the photograph.")
+
+                            print("\nJames looks nervous.")
+
+                            print('"I... I may have seen that photograph before."')
+
+                            print("\n[NEW INFORMATION]")
+
+                            print("James has changed his original statement.")
+
+                            contradiction = (
+                                "James initially denied knowing about the photograph, "
+                                "but changed his statement when confronted with it."
+                            )
+
+                            if contradiction not in contradictions:
+
+                                contradictions.append(contradiction)
+
+                                print("\n[CONTRADICTION DISCOVERED]")
+                                print(contradiction)
+
+                                print("\nAdded to your detective notebook!")
+
+                        else:
+
+                            print("\nYou haven't discovered the photograph yet.")
+                            print("Perhaps you should investigate the crime scene first.")
 
                 elif question == "5":
 
@@ -273,8 +303,6 @@ def evidence_analysis():
 
     print("\n========== EVIDENCE ANALYSIS ==========")
 
-    # Evidence that the player has discovered
-
     evidence_options = {
 
         "1": "You find a photograph of Edward with an unknown person.",
@@ -287,8 +315,6 @@ def evidence_analysis():
 
         "5": "You find a partially burned piece of paper."
     }
-
-    # Check if any clues have been discovered
 
     if not notebook:
 
@@ -378,6 +404,7 @@ def evidence_analysis():
 
             print("You carefully examine the burned letter.")
             print("You can make out a few words:")
+
             print('"Meet me tonight. Nobody can know."')
 
             print("\nSomeone was hiding a secret from Edward.")
@@ -568,3 +595,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
